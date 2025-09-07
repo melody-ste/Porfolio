@@ -1,13 +1,24 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Resume from './pages/Resume';
+import Projects from './pages/Projects';
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1>Mélody Stephan</h1>
-      
-    </>
-  )
+    <BrowserRouter>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  );
 }
 
 export default App

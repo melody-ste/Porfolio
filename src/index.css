@@ -1,0 +1,25 @@
+:root {
+  --color-primary: #782a04;
+  --color-secondary: #e5a657;
+  --color-background: #f5e2ce;
+  --color-text: #782a04;
+
+  --font-primary: 'Satoshi', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}

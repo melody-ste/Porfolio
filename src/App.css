@@ -1,0 +1,60 @@
+/*============================*/
+/*           NAVBAR           */
+/*============================*/
+
+nav {
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav a:hover {
+  color: var(--color-secondary);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+/*============================*/
+/*           FOOTER           */
+/*============================*/
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--color-background);
+  padding: 1rem;
+  bottom: 0;
+  border-top: 1px solid var(--color-text);
+}
+
+footer a {
+  color: var(--color-text);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+footer a:hover {
+  color: var(--color-secondary);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

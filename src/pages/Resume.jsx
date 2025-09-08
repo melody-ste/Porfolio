@@ -1,5 +1,7 @@
+import { Icon } from "@iconify/react";
+
 const Resume = () => {
-return (
+  return (
     <div>
       <h1>Mélody Stephan</h1>
       <h2>Développeur web fullstack et généraliste 3D</h2>
@@ -7,10 +9,20 @@ return (
         <p>+33 7 71 00 77 71</p>
         <p>Haut-Rhin, Alsace</p>
         <p>melody_stephan@icloud.com</p>
-        <p>melody-ste</p>
-        <p>ArtStation</p>
-        <p>LinkedIn</p>
-        <p>Demo-reel</p>
+
+        <p>
+          <Icon icon="icomoon-free:linkedin" width="25" />
+          <a href="https://www.linkedin.com/in/m%C3%A9lody-stephan-b4a485172/">Mélody Stephan</a>
+        </p>
+        <p> 
+          <Icon icon="akar-icons:github-fill" width="25" />
+          <a href="https://github.com/melody-ste">melody-ste</a>
+        </p>
+        <p>
+          <Icon icon="simple-icons:artstation" width="25" />
+          <a href="https://github.com/melody-ste">Mélody Stephan</a>
+        </p>
+      
       </div>
       <div>
         <h3>Compétences</h3>

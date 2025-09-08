@@ -1,4 +1,6 @@
 import { Icon } from "@iconify/react";
+import React, { useContext } from "react";
+import LanguageContext from "../contexts/LanguageContext";
 
 const Resume = () => {
   return (

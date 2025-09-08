@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import LanguageContext from "../contexts/LanguageContext";
+
 const Home = () => {
   return (
     <div className="container-home">

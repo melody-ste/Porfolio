@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import ThemeContext from "../contexts/ThemeContext";
 
 const Navbar = () => {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  
   return (
-    <nav>
+    <nav className={`navbar ${theme}`}>
       <ul>
         <li>
           <Link to="/resume">CV</Link>
@@ -11,7 +16,12 @@ const Navbar = () => {
           <Link to="/projects">Projets</Link>
         </li>
       </ul>
+
+      <button onClick={toggleTheme} className="theme-toggle-btn">
+        {theme === "light" ? "🌙" : "☀️"}
+      </button>
     </nav>
+    
   );
 };
 

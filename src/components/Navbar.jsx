@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import ThemeContext from "../contexts/ThemeContext";
 import LanguageContext from "../contexts/LanguageContext";
 import translations from "../contexts/translations";
+import { Icon } from "@iconify/react";
 
 const Navbar = () => {
 
@@ -20,15 +21,26 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div>
-        <button onClick={toggleTheme} className="theme-toggle-btn">
-          {theme === "light" ? "🌙" : "☀️"}
-        </button>
+      <ul>
+        <li>
+          <button onClick={toggleLanguage} className="language-toggle-btn">
+            {language === "fr" ? "EN" : "FR"}
+          </button>
+        </li>
 
-        <button onClick={toggleLanguage} className="language-toggle-btn">
-          {language === "fr" ? "EN" : "FR"}
-        </button>
-      </div>
+        <li>
+          <label className="switch">
+            <input
+              type="checkbox"
+              onChange={toggleTheme}
+              checked={theme === "dark"}
+            />
+            <Icon icon="gg:sun" className="switch-icon sun" />
+            <Icon icon="material-symbols:dark-mode-outline" className="switch-icon moon" />
+          </label>
+        </li>
+
+      </ul>
     </nav>
     
   );

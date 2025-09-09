@@ -6,6 +6,9 @@ nav {
   padding: 1rem;
   background-color: var(--color-background);
   border-bottom: 1px solid var(--color-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
@@ -24,6 +27,65 @@ nav ul {
   margin: 0;
   display: flex;
   gap: 1rem;
+}
+
+nav button {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-background);
+}
+/*============================*/
+/*           SWITCH           */
+/*============================*/
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+  height: 26px;
+  background-color: var(--color-text);
+  border-radius: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch-icon {
+  color: var(--color-background);
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.switch .sun {
+  opacity: 1;
+}
+
+.switch .moon {
+  opacity: 0;
+}
+
+.switch input:checked ~ .sun {
+  opacity: 0;
+}
+
+.switch input:checked ~ .moon {
+  opacity: 1;
 }
 
 /*============================*/

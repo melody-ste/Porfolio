@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #782a04;
+  --color-primary: #B53324;
   --color-secondary: #e5a657;
   --color-background: #f5e2ce;
   --color-text: #782a04;
@@ -12,8 +12,8 @@
 /*           MODE SOMBRE           */
 
 .app.dark {
-  --color-primary: #782a04;
-  --color-secondary: #e5a657;
+  --color-primary: #e5a657;
+  --color-secondary: #782a04;
   --color-background: #181717;
   --color-text: #f5e2ce;
 }

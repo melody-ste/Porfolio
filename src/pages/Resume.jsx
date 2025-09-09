@@ -1,12 +1,15 @@
 import { Icon } from "@iconify/react";
 import React, { useContext } from "react";
 import LanguageContext from "../contexts/LanguageContext";
+import translations from "../contexts/translations";
 
 const Resume = () => {
+  const { language } = useContext(LanguageContext);
+
   return (
     <div>
       <h1>Mélody Stephan</h1>
-      <h2>Développeur web fullstack et généraliste 3D</h2>
+      <h2>{translations.resume.jobTitle[language]}</h2>
       <div>
         <p>+33 7 71 00 77 71</p>
         <p>Haut-Rhin, Alsace</p>
@@ -27,9 +30,9 @@ const Resume = () => {
       
       </div>
       <div>
-        <h3>Compétences</h3>
+        <h3>{translations.resume.skills[language]}</h3>
         <ul>
-          <h4>Développement</h4>
+          <h4>{translations.resume.dev[language]}</h4>
           <li>HTML</li>
           <li>CSS/Sass</li>
           <li>Ruby/Ruby on rails</li>
@@ -38,7 +41,7 @@ const Resume = () => {
           <li>Git/Github</li>
         </ul>
         <ul>
-          <h4>Logiciels 3D</h4>
+          <h4>{translations.resume.softwares[language]}</h4>
           <li>Maya</li>
           <li>Arnold</li>
           <li>ZBrush</li>
@@ -48,34 +51,33 @@ const Resume = () => {
           <li>Nuke</li>
         </ul>
         <ul>
-          <h4>Langues</h4>
-          <li>Français ( langue maternelle )</li>
-          <li>Anglais ( fluent )</li>
+          <h4>{translations.resume.languages[language]}</h4>
+          {translations.resume.languageList[language].map((lang, i) => (
+            <li key={i}>{lang}</li>
+          ))}
         </ul>
       </div>
 
       <div>
         <div>
-          <h3>Expériences Professionnelles</h3>
+          <h3>{translations.resume.profExp[language]}</h3>
           <ul>
             <li>
-              <h4>Généraliste 3D</h4>
-              <p>Février 2023 - Février 2024</p>
+              <h4>{translations.resume.exp1Title[language]}</h4>
+              <p>{translations.resume.exp1Date[language]}</p>
               <ul>
-                <li>Modeling/texturing pour le département RA.</li>
-                <li>Modeling, UV mapping et optimisation d'assets pour plusieurs publicités.</li>
-                <li>Set dressing d'environnements et lighting de plusieurs shots dans Maya.</li>
-                <li>Gestion des rendus d'images sur Deadline.</li>
-                <li>Compositing de certains shots sur Nuke et Aftereffects.</li>
+                {translations.resume.exp1Tasks[language].map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
               </ul>
             </li>
             <li>
-              <h4>Stagiaire généraliste 3D</h4>
-              <p>Septembre 2022- Décembre 2022</p>
+              <h4>{translations.resume.exp2Title[language]}</h4>
+              <p>{translations.resume.exp2Date[language]}</p>
               <ul>
-                <li>Modeling/texturing pour le département RA.</li>
-                <li>Modeling, UV mapping et optimisation d'assets pour une publicité.</li>
-                <li>Texturing et création de shaders.</li>
+                {translations.resume.exp2Tasks[language].map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
               </ul>
             </li>
             
@@ -83,26 +85,27 @@ const Resume = () => {
         </div>
 
         <div>
-          <h3>Formations</h3>
+          <h3>{translations.resume.education[language]}</h3>
           <ul>
             <li>
-              <h4>formation Developpement Web</h4>
-              <p>mai 2025 - aujourd'hui</p>
-              <p>The Hacking project</p>
-            </li>
-            <li></li>
-              <h4>Bachelor Animation 3D & Jeux Vidéo</h4>
-              <p>2019 - 2022</p>
-              <p>Bellecour école</p>
-            <li>
-              <h4>Prépa/MANAA ( Mise à Niveau en Arts Appliquées )</h4>
-              <p>2018 - 2019</p>
-              <p>LISAA ( Institut Supérieur des Arts Appliqués )</p>
+              <h4>{translations.resume.edu1[language]}</h4>
+              <p>{translations.resume.edu1Date[language]}</p>
+              <p>{translations.resume.edu1School[language]}</p>
             </li>
             <li>
-              <h4>Baccalauréat Scientifique</h4>
-              <p>2015 - 2018</p>
-              <p>Lycée Camille sée</p>
+              <h4>{translations.resume.edu2[language]}</h4>
+              <p>{translations.resume.edu2Date[language]}</p>
+              <p>{translations.resume.edu2School[language]}</p>
+            </li>
+            <li>
+              <h4>{translations.resume.edu3[language]}</h4>
+              <p>{translations.resume.edu3Date[language]}</p>
+              <p>{translations.resume.edu3School[language]}</p>
+            </li>
+            <li>
+              <h4>{translations.resume.edu4[language]}</h4>
+              <p>{translations.resume.edu4Date[language]}</p>
+              <p>{translations.resume.edu4School[language]}</p>
             </li>
           </ul>
         </div>

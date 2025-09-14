@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import LanguageContext from "../contexts/LanguageContext";
 import translations from "../contexts/translations";
+import { Link } from "react-router-dom";
 
 const Projets = () =>  {
   const { language } = useContext(LanguageContext);
@@ -36,8 +37,10 @@ const Projets = () =>  {
       <ul>
         {projects.map((project) => (
           <li key={project.id}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
+            <Link to={`/projects/${project.slug}`}>
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+            </Link>
           </li>
         ))}
       </ul>

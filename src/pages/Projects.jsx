@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import LanguageContext from "../contexts/LanguageContext";
 import translations from "../contexts/translations";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 const Projets = () =>  {
   const { language } = useContext(LanguageContext);
@@ -31,19 +32,27 @@ const Projets = () =>  {
   if (error) return <p>{error}</p>;
 
  return (
-     <div>
-      <h1>Mes projets</h1>
-      {projects.length === 0 && <p>Aucun projet pour le moment.</p>}
-      <ul>
-        {projects.map((project) => (
-          <li key={project.id}>
-            <Link to={`/projects/${project.slug}`}>
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <div>
+        <Link to="/" >
+          <Icon icon="bytesize:arrow-left" width="30" />
+        </Link>
+      </div>
+
+      <div>
+        <h1>Mes projets</h1>
+        {projects.length === 0 && <p>Aucun projet pour le moment.</p>}
+        <ul>
+          {projects.map((project) => (
+            <li key={project.id}>
+              <Link to={`/projects/${project.slug}`}>
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

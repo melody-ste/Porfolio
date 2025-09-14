@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ThemeContext from "./contexts/ThemeContext";
 import LanguageContext from "./contexts/LanguageContext";

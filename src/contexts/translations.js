@@ -4,6 +4,10 @@ const translations = {
     projects: { fr: "Projets", en: "Projects"},
   },
 
+  footer : {
+    legalnotice: { fr: "Mentions légales", en: "Legal Notice"},
+  },
+
   resume: {
     jobTitle: {
       fr: "Développeur web fullstack et généraliste 3D",

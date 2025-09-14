@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import React, { useContext } from "react";
+import LanguageContext from "../contexts/LanguageContext";
+import translations from "../contexts/translations";
 
 const Footer = () => {
+  const { language } = useContext(LanguageContext);
   return (
     <footer>
       <ul>
@@ -19,7 +23,7 @@ const Footer = () => {
 
       <ul>
         <li>
-          <Link to="/legal-notice">Mentions légales</Link>
+          <Link to="/legal-notice">{translations.footer.legalnotice[language]}</Link>
         </li>
       </ul>
     </footer>

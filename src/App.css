@@ -132,7 +132,7 @@ footer ul {
 }
 
 .container-home {
-  margin: 5rem;
+  margin: 10rem 5rem;
 }
 
 .container-home h2 {
@@ -146,7 +146,7 @@ footer ul {
 .container-resume {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 5rem;
+  margin: 2rem 5rem;
 }
 
 .resume-left {
@@ -214,8 +214,27 @@ footer ul {
   text-decoration: underline;
 }
 
-.container-resume ul {
+
+ /*           LIST           */
+ul.vertical-line {
+  position: relative;
+  padding-left: 1.5rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
+}
+
+ul.vertical-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-secondary);
+}
+
+/* Optionnel : un peu de style pour chaque item */
+ul.vertical-line li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0.5rem; /* espace entre le trait et le texte */
 }

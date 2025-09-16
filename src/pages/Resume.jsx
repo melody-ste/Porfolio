@@ -10,7 +10,7 @@ const Resume = () => {
   return (
     <div>
       <div>
-        <Link to="/" >
+        <Link to="/" className="back-link" >
           <Icon icon="bytesize:arrow-left" width="30" />
         </Link>
       </div>
@@ -42,20 +42,21 @@ const Resume = () => {
           <div>
             <h2>{translations.resume.skills[language]}</h2>
             <ul>
-              <li><h3>{translations.resume.dev[language]}</h3></li>
-              <ul>
+              <h3>{translations.resume.dev[language]}</h3>
+              <ul className="vertical-line">
                 <li>HTML</li>
                 <li>CSS/Sass</li>
                 <li>Ruby/Ruby on rails</li>
                 <li>Base de données SQLite & PostgreSQL</li>
                 <li>Javascript/ReactJS</li>
+                <li>Bootstrap</li>
                 <li>Git/Github</li>
               </ul>
               
             </ul>
             <ul>
-              <li><h3>{translations.resume.softwares[language]}</h3></li>
-              <ul>
+              <h3>{translations.resume.softwares[language]}</h3>
+              <ul className="vertical-line">
                 <li>Maya</li>
                 <li>Arnold</li>
                 <li>ZBrush</li>
@@ -68,9 +69,12 @@ const Resume = () => {
             </ul>
             <ul>
               <h3>{translations.resume.languages[language]}</h3>
-              {translations.resume.languageList[language].map((lang, i) => (
-                <li key={i}>{lang}</li>
-              ))}
+              <ul className="vertical-line">
+                {translations.resume.languageList[language].map((lang, i) => (
+                  <li key={i}>{lang}</li>
+                ))}
+              </ul>
+            
             </ul>
           </div>
         </div>
@@ -79,51 +83,50 @@ const Resume = () => {
           <div>
             <h2>{translations.resume.profExp[language]}</h2>
             <ul>
-              <li>
-                <h3>{translations.resume.exp1Title[language]}</h3>
-                <p>{translations.resume.exp1Date[language]}</p>
-                <ul>
-                  {translations.resume.exp1Tasks[language].map((task, i) => (
-                    <li key={i}>{task}</li>
-                  ))}
-                </ul>
-              </li>
-              <li>
-                <h3>{translations.resume.exp2Title[language]}</h3>
-                <p>{translations.resume.exp2Date[language]}</p>
-                <ul>
-                  {translations.resume.exp2Tasks[language].map((task, i) => (
-                    <li key={i}>{task}</li>
-                  ))}
-                </ul>
-              </li>
+              <h3>{translations.resume.exp1Title[language]}</h3>
+              <p>{translations.resume.exp1Date[language]}</p>
+              <ul className="vertical-line">
+                {translations.resume.exp1Tasks[language].map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
+              </ul>
               
+              <h3>{translations.resume.exp2Title[language]}</h3>
+              <p>{translations.resume.exp2Date[language]}</p>
+              <ul className="vertical-line">
+                {translations.resume.exp2Tasks[language].map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
+              </ul>
             </ul>
           </div>
 
           <div>
             <h2>{translations.resume.education[language]}</h2>
             <ul>
-              <li>
-                <h3>{translations.resume.edu1[language]}</h3>
+              <h3>{translations.resume.edu1[language]}</h3>
+              <ul className="vertical-line">
                 <p>{translations.resume.edu1Date[language]}</p>
                 <p>{translations.resume.edu1School[language]}</p>
-              </li>
-              <li>
-                <h3>{translations.resume.edu2[language]}</h3>
+              </ul>
+             
+              <h3>{translations.resume.edu2[language]}</h3>
+              <ul className="vertical-line">
                 <p>{translations.resume.edu2Date[language]}</p>
                 <p>{translations.resume.edu2School[language]}</p>
-              </li>
-              <li>
-                <h3>{translations.resume.edu3[language]}</h3>
+              </ul>
+
+              <h3>{translations.resume.edu3[language]}</h3>
+              <ul className="vertical-line">
                 <p>{translations.resume.edu3Date[language]}</p>
                 <p>{translations.resume.edu3School[language]}</p>
-              </li>
-              <li>
-                <h3>{translations.resume.edu4[language]}</h3>
+              </ul>
+
+              <h3>{translations.resume.edu4[language]}</h3>
+              <ul className="vertical-line">
                 <p>{translations.resume.edu4Date[language]}</p>
                 <p>{translations.resume.edu4School[language]}</p>
-              </li>
+              </ul>
             </ul>
           </div>
         </div>

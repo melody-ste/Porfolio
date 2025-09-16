@@ -36,3 +36,8 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
 }
+
+.back-link svg {
+  color: var(--color-text);
+  margin: 0.5rem 5rem 0 5rem;
+}

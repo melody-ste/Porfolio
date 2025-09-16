@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ThemeContext from "./contexts/ThemeContext";
@@ -13,16 +13,34 @@ import Footer from './components/Footer';
 
 const App = () => {
 
-  const [theme, setTheme] = useState("light");
-  const [language, setLanguage] = useState("fr");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem("language") || "fr";
+  });
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(prev => {
+      const newTheme = prev === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === "fr" ? "en" : "fr");
+    setLanguage(prev => {
+      const newLang = prev === "fr" ? "en" : "fr";
+      localStorage.setItem("language", newLang);
+      return newLang;
+    });
   };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    localStorage.setItem("language", language);
+  }, [language]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

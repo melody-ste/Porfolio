@@ -34,21 +34,27 @@ const Projets = () =>  {
  return (
     <div>
       <div>
-        <Link to="/" >
+        <Link to="/" className="back-link" >
           <Icon icon="bytesize:arrow-left" width="30" />
         </Link>
       </div>
 
-      <div>
+      <div className="container-projects" >
         <h1>Mes projets</h1>
         {projects.length === 0 && <p>Aucun projet pour le moment.</p>}
-        <ul>
+        <ul className="projects-list">
           {projects.map((project) => (
-            <li key={project.id}>
-              <Link to={`/projects/${project.slug}`}>
-                <h2>{project.title}</h2>
-                <p>{project.description}</p>
-              </Link>
+            <li key={project.id} className="project-card">
+               <Link to={`/projects/${project.slug}`} className="project-link">
+                  {project.header?.data?.attributes?.url && (
+                    <img
+                      src={project.header.data.attributes.url}
+                      alt={project.title}
+                      className="project-card-header"
+                    />
+                  )}
+                  <h2>{project.title}</h2>
+                </Link>
             </li>
           ))}
         </ul>

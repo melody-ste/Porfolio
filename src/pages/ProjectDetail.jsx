@@ -41,14 +41,35 @@ const ProjectDetail = () => {
   return (
     <div>
       <div>
-        <Link to="/projects" >
+        <Link to="/projects" className="back-link" >
           <Icon icon="bytesize:arrow-left" width="30" />
         </Link>
       </div>
 
-      <div>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+      <div className="detail-container">
+        <div>
+          <h1>{project.title}</h1>
+          <p className="text-block">{project.description}</p>
+        </div>
+        <div>
+          {/* {project.attributes.multimedia.data.map((media, index) => {
+            const url = media.attributes.url;
+            const mimeType = media.attributes.mime; // exemple : "image/png" ou "video/mp4"
+
+            if (mimeType.startsWith("image")) {
+              return <img key={index} src={url} alt={media.attributes.name} className="project-media" />;
+            } else if (mimeType.startsWith("video")) {
+              return (
+                <video key={index} controls className="project-media">
+                  <source src={url} type={mimeType} />
+                  Votre navigateur ne supporte pas la lecture de cette vidéo.
+                </video>
+              );
+            } else {
+              return null;
+            }
+          })} */}
+        </div>
       </div>
     </div>
   );

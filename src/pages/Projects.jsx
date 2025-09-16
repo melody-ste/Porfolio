@@ -40,7 +40,7 @@ const Projets = () =>  {
       </div>
 
       <div className="container-projects" >
-        <h1>Mes projets</h1>
+        <h1>{translations.projects.projectsTitle[language]}</h1>
         {projects.length === 0 && <p>Aucun projet pour le moment.</p>}
         <ul className="projects-list">
           {projects.map((project) => (

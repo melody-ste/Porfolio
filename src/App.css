@@ -289,3 +289,39 @@ ul.vertical-line li {
 .project-link:hover {
   color: var(--color-secondary);
 }
+
+/*============================*/
+/*         P-DETAILS          */
+/*============================*/
+
+.detail-container{
+  margin: 1rem 5rem;
+  
+  align-items: flex-start;
+  gap: 2rem;
+  display: flex;
+}
+
+.detail-container > div:first-child {
+  flex: 1;
+}
+
+.detail-container > div:last-child {
+  flex: 2;
+}
+
+.media-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-media {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* LEGAL NOTICE */
+.container-lg {
+  margin: 3rem 5rem;
+}

@@ -8,6 +8,24 @@ const translations = {
     legalnotice: { fr: "Mentions légales", en: "Legal Notice"},
   },
 
+  projects : {
+    projectsTitle: { fr: "Mes projets", en: "My projects"},
+  },
+
+  legalContent : {
+    title2: {fr: "Hébergement", en: "Hosting"},
+    title3: {fr: "Propriété intellectuelle", en: "Intellectual Property"},
+    title4: {fr: "Données personnelles", en: "Personal Data"},
+
+    para2: {fr: "Ce site est un portfolio personnel réalisé par Mélody Stephan.", en: "This site is a personal portfolio created by Mélody Stephan."},
+    para3: {fr: "Le site est hébergé par Vercel.", en: "The site is hosted by Vercel."},
+    para4: {fr: "Tous les contenus présents sur ce site (textes, images, vidéos, code) sont la propriété de Mélody Stephan ou utilisés avec permission. Toute reproduction, même partielle, est interdite sans autorisation.", en: "All content on this site (texts, images, videos, code) is the property of Mélody Stephan or used with permission. Any reproduction, even partial, is prohibited without authorization."},
+    para5: {fr: "Aucune donnée personnelle n’est collectée via ce site.", en: "No personal data is collected through this site."},
+    para6: {fr: "Ce site n’utilise pas de cookies de suivi ou publicitaires.", en: "This site does not use tracking or advertising cookies."},
+    para7: {fr: "Pour toute question ou demande, vous pouvez me contacter à melody_stephan@icloud.com", en: "For any question or request, you can contact me at melody_stephan@icloud.com."},
+    
+  },
+
   resume: {
     jobTitle: {
       fr: "Développeur web fullstack et généraliste 3D",

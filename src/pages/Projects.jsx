@@ -16,6 +16,7 @@ const Projets = () =>  {
         const url = `https://funny-activity-cb50ecb0b0.strapiapp.com/api/projects?populate=*`;
         const response = await fetch(url);
         const data = await response.json();
+        // console.log("DATA STRAPI ===>", data);
         setProjects(data.data); 
       } catch (err) {
         console.error(err);
@@ -42,22 +43,22 @@ const Projets = () =>  {
       <div className="container-projects" >
         <h1>{translations.projects.projectsTitle[language]}</h1>
         {projects.length === 0 && <p>Aucun projet pour le moment.</p>}
-        <ul className="projects-list">
-          {projects.map((project) => (
-            <li key={project.id} className="project-card">
-               <Link to={`/projects/${project.slug}`} className="project-link">
-                  {project.header?.data?.attributes?.url && (
+          <ul className="projects-list">
+            {projects.map((project) => (
+              <li key={project.id} className="project-card">
+                <Link to={`/projects/${project.slug}`} className="project-link">
+                  {project.header?.url && (
                     <img
-                      src={project.header.data.attributes.url}
+                      src={project.header.url}
                       alt={project.title}
                       className="project-card-header"
                     />
                   )}
                   <h2>{project.title}</h2>
                 </Link>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
       </div>
     </div>
   );

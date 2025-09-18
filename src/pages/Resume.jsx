@@ -51,6 +51,7 @@ const Resume = () => {
                 <li>Javascript/ReactJS</li>
                 <li>Bootstrap</li>
                 <li>Git/Github</li>
+                <li>Penpot</li>
               </ul>
               
             </ul>

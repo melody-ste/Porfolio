@@ -271,7 +271,7 @@ ul.vertical-line li {
 
 .project-card-header {
   width: 100%;
-  height: 150px;
+  height: 300px;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

@@ -7,8 +7,8 @@ const Home = () => {
   
   return (
     <div className="container-home">
-      <h1 className="title-header">Mélody</h1>
-      <h1 className="title-header">Stephan</h1>
+      <h1 className="title-header">Mélody Stephan</h1>
+      {/* <h1 className="title-header">Stephan</h1> */}
       <h2>{translations.resume.jobTitle[language]}</h2>
     </div>
   );

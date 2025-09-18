@@ -13,7 +13,7 @@ const Projets = () =>  {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const url = `https://funny-activity-cb50ecb0b0.strapiapp.com/api/projects?populate=*`;
+        const url =  `https://funny-activity-cb50ecb0b0.strapiapp.com/api/projects?populate=header&locale=${language}`;
         const response = await fetch(url);
         const data = await response.json();
         // console.log("DATA STRAPI ===>", data);
@@ -27,7 +27,7 @@ const Projets = () =>  {
     };
 
     fetchProjects();
-  }, []);
+  },  [language]);
 
   if (loading) return <p>Chargement...</p>;
   if (error) return <p>{error}</p>;

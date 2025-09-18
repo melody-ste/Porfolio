@@ -132,11 +132,27 @@ footer ul {
 }
 
 .container-home {
-  margin: 10rem 5rem;
+  margin: 15rem 5rem;
 }
 
 .container-home h2 {
   line-height: 0;
+}
+
+@media (max-width: 768px) {
+  .title-header {
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .container-home {
+    margin: 5rem 1rem;
+  }
+
+  .container-home h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
 }
 
 /*============================*/
@@ -160,6 +176,7 @@ footer ul {
   flex-direction: column;
   gap: 2rem;
 }
+
 
 /*            CARD            */
 
@@ -187,6 +204,34 @@ footer ul {
 
 .contact {
   line-height: 0.1;
+}
+
+@media (max-width: 768px) {
+  .container-resume {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+
+  .resume-left,
+  .resume-right {
+    gap: 1rem;
+  }
+
+   .card-resume {
+    margin-left: 0;
+    padding-left: 1rem;
+    max-width: 100%;
+    box-shadow: 4px 4px 0px var(--color-text);
+  }
+
+  .title-resume {
+    font-size: 2.5rem;
+  }
+
+  .contact {
+    font-size: 0.9rem; 
+    line-height: 1;
+  }
 }
 
 /*           lINKS           */
@@ -323,6 +368,23 @@ ul.vertical-line li {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 768px) {
+  .detail-container {
+    flex-direction: column;
+    margin: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .detail-container > div:first-child,
+  .detail-container > div:last-child {
+    flex: unset;
+    width: 100%;
+  }
+
+  .project-media {
+    width: 100%;
+  }
+}
 
 /* LEGAL NOTICE */
 .container-lg {

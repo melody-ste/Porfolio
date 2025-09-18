@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import LanguageContext from "../contexts/LanguageContext";
 
 const ProjectDetail = () => {
-
+  
   const { slug } = useParams();
+  const { language } = useContext(LanguageContext);
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,7 +16,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const url = `https://funny-activity-cb50ecb0b0.strapiapp.com/api/projects?filters[slug][$eq]=${slug}&populate=*`;
+        const url =  `https://funny-activity-cb50ecb0b0.strapiapp.com/api/projects?filters[slug][$eq]=${slug}&populate=*&locale=${language}`;
         const response = await fetch(url);
         const data = await response.json();
 
@@ -32,7 +34,7 @@ const ProjectDetail = () => {
     };
 
     fetchProject();
-  }, [slug]);
+  }, [slug, language]);
 
   if (loading) return <p>Chargement...</p>;
   if (error) return <p>{error}</p>;
@@ -52,12 +54,19 @@ const ProjectDetail = () => {
           <p className="text-block">{project.description}</p>
         </div>
         <div>
-          {/* {project.attributes.multimedia.data.map((media, index) => {
-            const url = media.attributes.url;
-            const mimeType = media.attributes.mime; // exemple : "image/png" ou "video/mp4"
+          {project.multimedia?.map((media, index) => {
+            const url = media.url;
+            const mimeType = media.mime;
 
             if (mimeType.startsWith("image")) {
-              return <img key={index} src={url} alt={media.attributes.name} className="project-media" />;
+              return (
+                <img
+                  key={index}
+                  src={url}
+                  alt={media.alternativeText || media.name}
+                  className="project-media"
+                />
+              );
             } else if (mimeType.startsWith("video")) {
               return (
                 <video key={index} controls className="project-media">
@@ -68,7 +77,7 @@ const ProjectDetail = () => {
             } else {
               return null;
             }
-          })} */}
+          })}
         </div>
       </div>
     </div>

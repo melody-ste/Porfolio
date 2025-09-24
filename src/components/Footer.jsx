@@ -17,7 +17,7 @@ const Footer = () => {
         </li>
         <li>
           
-          <a href="https://github.com/melody-ste"><Icon icon="simple-icons:artstation" width="25" /></a>
+          <a href="https://www.artstation.com/melody_st"><Icon icon="simple-icons:artstation" width="25" /></a>
         </li>
       </ul>
 
